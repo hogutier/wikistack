@@ -1,2 +1,0 @@
-dropdb wikistack
-createdb wikistack
