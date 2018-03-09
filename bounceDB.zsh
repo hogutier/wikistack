@@ -1,0 +1,2 @@
+dropdb wikistack
+createdb wikistack
