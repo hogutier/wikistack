@@ -19,7 +19,7 @@ app.use('/', (req, res, next) => {
 const initialize = async () => {
   try {
     await models.db.authenticate()
-    await models.db.sync()
+    await models.db.sync({force: true})
     console.log('connected to the database')
 
     app.listen(PORT, () => {
