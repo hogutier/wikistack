@@ -23,6 +23,8 @@
     "html-template-tag": "^2.0.0",
     "morgan": "^1.9.0",
     "nodemon": "^1.17.1",
+    "pg": "^6.4.2",
+    "pg-hstore": "^2.3.2",
     "sequelize": "^4.35.2"
   }
 }
