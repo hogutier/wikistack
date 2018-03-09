@@ -22,6 +22,16 @@ const Page = db.define('page', {
   }
 })
 
+function generateSlug (title) {
+  // Removes all non-alphanumeric characters from title
+  // And make whitespace underscore
+  return title.replace(/\s+/g, '_').replace(/\W/g, '');
+}
+
+Page.beforeValidate((instance) => {
+  instance.slug = generateSlug(instance.title);
+})
+
 // user
 const User = db.define('user', {
   name: {
