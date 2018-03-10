@@ -23,7 +23,7 @@ app.use('/', (req, res, next) => {
 const initialize = async () => {
   try {
     await models.db.authenticate()
-    await models.db.sync({force: true})
+    await models.db.sync({force: false})
     console.log('connected to the database')
 
     app.listen(PORT, () => {
@@ -35,3 +35,5 @@ const initialize = async () => {
 }
 
 initialize()
+
+
