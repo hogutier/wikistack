@@ -11,19 +11,32 @@ router.get('/add', (req, res, next) => {
   res.send(addPage());
 });
 
+router.get('/:slug', async (req, res, next) => {
+  const {slug} = req.params;
+  try {
+    const page = await Page.findOne({
+      where: {
+        slug
+      }
+    })
+    res.json(page);
+  } catch (error) {
+    next(error)
+  }
+})
+
 router.post('/', async (req, res, next) => {
-  const {title, content} = req.body;
+  const {title, content, status} = req.body;
+  console.log(JSON.stringify(req.body));
   const page = new Page({
-  title, content
+  title, content, status
   })
   try {
     await page.save();
-    res.redirect('/');
+    res.redirect(`/${page.slug}`);
   } catch (error) {
     next(error);
   }
 });
-
-
 
 module.exports = router;

@@ -38,7 +38,7 @@ module.exports = () =>
     <div class="form-group">
       <label for="page status" class="col-sm-2 control-label">Page status</label>
       <div class="col-sm-10">
-        <select id="page status" name="page status"  class="form-control">
+        <select id="status" name="status"  class="form-control">
             <option value="open" selected>open</option>
             <option value="closed">closed</option>
         </select>
