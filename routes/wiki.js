@@ -1,4 +1,4 @@
-const {addPage, main} = require('../views');
+const {addPage, main, wikiPage} = require('../views');
 const router = require('express').Router();
 const { Page } = require('../models');
 
@@ -19,7 +19,8 @@ router.get('/:slug', async (req, res, next) => {
         slug
       }
     })
-    res.json(page);
+    console.log(wikiPage(page, 'Daisy'))
+    res.send(wikiPage(page, 'Daisy'));
   } catch (error) {
     next(error)
   }
